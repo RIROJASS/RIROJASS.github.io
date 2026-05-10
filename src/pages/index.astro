@@ -1,0 +1,201 @@
+---
+import Base from "../layouts/Base.astro";
+import { profile } from "../lib/profile";
+
+const sortedProjects = [...(profile.projects ?? [])].sort(
+  (a, b) => a.importance - b.importance,
+);
+const research = sortedProjects.filter((p) => p.category === "research");
+const builds = sortedProjects.filter((p) => p.category === "builds");
+---
+
+<Base>
+  <header class="hero">
+    <h1>{profile.identity.preferred_name}</h1>
+    <p class="tagline">{profile.positioning.tagline}</p>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>{profile.identity.status}.</p>
+    {
+      profile.positioning.one_lens_two_majors && (
+        <p>{profile.positioning.one_lens_two_majors}</p>
+      )
+    }
+    {profile.positioning.long_arc && <p>{profile.positioning.long_arc}</p>}
+    {
+      profile.positioning.intellectual_frame?.motif && (
+        <p class="dim">{profile.positioning.intellectual_frame.motif}</p>
+      )
+    }
+  </section>
+
+  {
+    profile.identity.affiliations && profile.identity.affiliations.length > 0 && (
+      <section>
+        <h2>Affiliations</h2>
+        <ul class="entries">
+          {profile.identity.affiliations.map((a) => (
+            <li>
+              <strong>{a.org}</strong>
+              {a.role && <span> — {a.role}</span>}
+              {a.advisor && <span class="dim"> · {a.advisor}</span>}
+              {a.institution && <span class="dim"> · {a.institution}</span>}
+              {a.since && <span class="dim mono"> · since {a.since}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    profile.research?.manuscripts && profile.research.manuscripts.length > 0 && (
+      <section>
+        <h2>Research</h2>
+        <ul class="entries">
+          {profile.research.manuscripts.map((m) => (
+            <li>
+              <strong>{m.title}</strong>
+              {m.status && <span class="dim mono"> — {m.status}</span>}
+              {(m.contribution || m.summary || m.thesis) && (
+                <div class="dim">{m.contribution || m.summary || m.thesis}</div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    research.length > 0 && (
+      <section>
+        <h2>Research builds</h2>
+        <ul class="entries">
+          {research.map((p) => (
+            <li>
+              <strong>{p.name}</strong> — {p.one_line}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    builds.length > 0 && (
+      <section>
+        <h2>Builds</h2>
+        <ul class="entries">
+          {builds.map((p) => (
+            <li>
+              <strong>{p.name}</strong> — {p.one_line}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    profile.experience && profile.experience.length > 0 && (
+      <section>
+        <h2>Experience</h2>
+        <ul class="entries">
+          {profile.experience.map((e) => (
+            <li>
+              <strong>{e.role}</strong>
+              <span class="dim"> · {e.org}</span>
+              {e.dates && <span class="dim mono"> · {e.dates}</span>}
+              {e.summary && <div class="dim">{e.summary}</div>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    profile.news && profile.news.length > 0 && (
+      <section>
+        <h2>News</h2>
+        <ul class="entries">
+          {profile.news.map((n) => (
+            <li>
+              <span class="mono dim">{n.date}</span> — {n.text}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    profile.beyond && profile.beyond.length > 0 && (
+      <section>
+        <h2>Beyond</h2>
+        <ul class="entries">
+          {profile.beyond.map((b) => (
+            <li>{b}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    profile.sections?.map((s) => (
+      <section>
+        <h2>{s.title}</h2>
+        {s.kind === "prose" && s.body && <p>{s.body}</p>}
+        {s.kind === "list" && s.items && (
+          <ul class="entries">
+            {s.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+    ))
+  }
+
+  <section>
+    <h2>Contact</h2>
+    <p class="contact mono">
+      <a href={`mailto:${profile.identity.contact.email}`}>
+        {profile.identity.contact.email}
+      </a>
+      {
+        profile.identity.contact.github && (
+          <>
+            {" · "}
+            <a href={`https://github.com/${profile.identity.contact.github}`}>github</a>
+          </>
+        )
+      }
+      {
+        profile.identity.contact.linkedin && (
+          <>
+            {" · "}
+            <a href={`https://linkedin.com/in/${profile.identity.contact.linkedin}`}>
+              linkedin
+            </a>
+          </>
+        )
+      }
+    </p>
+  </section>
+
+  <hr />
+
+  <footer>
+    <p class="dim mono small">
+      Machine-readable: <a href="/profile.yml">profile.yml</a> ·
+      <a href="/profile.json">profile.json</a> ·
+      <a href="/llms.txt">llms.txt</a>
+    </p>
+    <p class="dim mono small">This site is rendered from a single YAML file.</p>
+  </footer>
+</Base>

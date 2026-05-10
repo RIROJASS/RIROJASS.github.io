@@ -1,0 +1,168 @@
+# profile.yml — canonical source of truth for raulrojas.dev
+# This file is served verbatim at /profile.yml and rendered as the entire website.
+# Editing this file and pushing to main updates the live site automatically.
+# Top-level keys here become structured data for LLM agents at /profile.json.
+
+identity:
+  name: Raúl Ignacio Rojas Sillery
+  preferred_name: Raúl Rojas
+  status: Junior at the University of Florida
+  education:
+    - institution: University of Florida
+      degrees: [B.S. Computer Science, B.A. Anthropology]
+      expected: 2027-05
+  affiliations:
+    - org: MIT Critical Data
+      role: AI Researcher
+      advisor: Dr. Leo Anthony Celi
+      since: 2025-10
+    - org: Break Through Tech AI Fellowship
+      role: Fellow
+      institution: MIT × Cornell Tech
+      since: 2025-05
+    - org: UF BCI Lab
+      role: Researcher
+      advisor: Dr. Marvin Andujar
+  contact:
+    email: raul.rojas@ufl.edu
+    github: RIROJASS
+    linkedin: raul-i-rojas
+    phone: "+1 (305) 842-8433"
+  locations: [Gainesville FL, Key Biscayne FL]
+  languages:
+    - { name: English, level: native }
+    - { name: Spanish, level: native }
+    - { name: French, level: conversational }
+
+positioning:
+  tagline: Boundary operator — building culturally intelligent systems where brains, cultures, and machines meet.
+  one_lens_two_majors: CS + Anthropology as one lens, two majors — not two separate tracks.
+  long_arc: Founder-CEO with neurotechnology as the long-term direction. Exploring PhD programs at MIT (Media Lab, CSAIL, HST).
+  intellectual_frame:
+    influences: [Eduardo Kohn, Daniel Miller, Alfred Gell, Stefan Helmreich]
+    motif: Lingua Ignota — a personal cross-domain pattern language formalizing pattern recognition across faces, markets, and EEG signals as one cognitive process.
+
+research:
+  manuscripts:
+    - id: shortkit-ml
+      title: ShortKit-ML
+      status: in review at IEEE Access
+      year: 2025
+      lab: MIT Critical Data
+      authors: [Sebastian Cajas (first), Raúl Rojas, Leo Anthony Celi (last)]
+      contribution: Unifying ontology bridging anthropological and ML definitions of "shortcut."
+      coverage: 20+ detection methods on CheXpert, MIMIC-CXR, CelebA.
+      selected: true
+    - id: sakshi
+      title: SAKSHI
+      lab: MIT Critical Data
+      summary: Community-operated accountability framework for health AI.
+      collaborators: [MIT, Johns Hopkins, McGill, Makerere, UBC, UT Austin]
+    - id: hallucinations
+      title: Hallucinations Are the Least of Our Concerns
+      lab: MIT Critical Data
+      thesis: Situated knowledge — not reference-checking — is the prerequisite for responsible LLM use in health.
+    - id: oracle-in-pocket
+      title: The Oracle in Your Pocket
+      lab: MIT Critical Data
+      thesis: How LLMs amplify Dunning–Kruger and erode elaborative reasoning.
+    - id: agora
+      title: AGORA
+      lab: MIT Critical Data
+      summary: Fully agentic simulation of academic publishing for studying prestige bias, gaming, and herding among AI agents.
+
+projects:
+  - id: astra
+    name: Astra
+    category: builds
+    one_line: Autonomous AI agent on a Mixture-of-Experts architecture (Scout / Analyst / Architect tiers).
+    detail: Runs an SLV options thesis end-to-end and doubles as a personal assistant. Reddit sentiment scanner, dynamic model-switcher. Built on OpenClaw.
+    importance: 1
+  - id: tdg
+    name: Temporal-Decay Graph
+    category: research
+    one_line: Real-time BCI/EEG data structure combining graph topology, exponential edge-weight decay, and lazy pruning.
+    course: COP3530 (UF Data Structures & Algorithms)
+    dataset: BCI Competition IV
+    importance: 2
+  - id: deep-focus-trainer
+    name: Deep Focus Trainer
+    category: builds
+    one_line: C-based neurofeedback tool integrating Muse 2 EEG with screen-activity monitoring.
+    structures: [ring buffer, hash table, binary heap]
+    importance: 3
+  - id: eeg-coherence
+    name: EEG Coherence Analysis Pipeline
+    category: research
+    one_line: SciPy-based coherence pipeline on a PhysioNet neuromarketing EEG dataset.
+    importance: 4
+  - id: lingua-ignota
+    name: Lingua Ignota
+    category: research
+    one_line: Cross-domain pattern language formalizing recognition across faces, markets, and EEG signals as one cognitive process.
+    influences: [Eduardo Kohn, Daniel Miller, Alfred Gell, Stefan Helmreich]
+    importance: 5
+  - id: funq
+    name: funQ
+    category: builds
+    one_line: Real-time nightlife discovery via social ingestion + sentiment + geolocation.
+    type: startup
+    since: 2025-01
+    importance: 6
+  - id: art-beyond-sight
+    name: Art Beyond Sight
+    category: builds
+    one_line: Accessibility app converting visual art to soundscapes.
+    venue: hackathon
+    date: 2025-10
+    importance: 7
+
+experience:
+  - role: AI/ML Intern
+    org: Northrop Grumman Mission Systems
+    dates: 2025-05 / 2025-08
+    summary: Trust & reliability protocols for LLMs in defense.
+  - role: Project Lead
+    org: MIT × Cornell Tech — Swytch AI Studio
+    dates: 2025-08 / 2025-12
+    summary: Six-person team. 85% accuracy workforce-forecasting model.
+  - role: Multimodal AI / CV Intern
+    org: Florida Museum of Natural History
+    dates: 2024-08 / 2025-05
+    summary: Mapped archaeological sites from satellite imagery. Presented at the 2025 FUR Conference.
+
+advisors:
+  - { name: Dr. Leo Anthony Celi, org: MIT Critical Data, role: Primary research advisor }
+  - { name: Dr. Marvin Andujar, org: UF BCI Lab, role: BCI / neurotech }
+  - { name: Dr. Benjamin Shickel, org: UF College of Medicine, role: Metacognitive AI internship }
+  - { name: Dr. Gabriel Prieto, org: UF Anthropology, role: Pampa La Cruz fieldwork (Peru) }
+
+news:
+  - date: 2026-01-15
+    text: Invited to AI as a Catalyst at MIT — 227 people from 161 institutions across 22+ countries.
+  - date: 2025-12-10
+    text: ShortKit-ML submitted to IEEE Access.
+  - date: 2025-10-01
+    text: Joined MIT Critical Data under Dr. Leo Anthony Celi.
+
+beyond:
+  - Freedives off Key Biscayne.
+  - Rowed at Miami Rowing Club (world-level).
+  - Ran a half marathon.
+  - Rode a bull twice in one night.
+  - Trades SLV options on a self-built thesis (COMEX inventory + Shanghai premiums + Chinese export restrictions).
+  - Excavated pre-Columbian sacrifices at Pampa La Cruz, Peru under Dr. Gabriel Prieto.
+
+# sections — add entries here and they appear on the homepage automatically.
+# Schema: { id, title, kind, body | items }
+# Kinds: prose | list
+sections: []
+
+meta:
+  schema_version: 1
+  generated_for: ["humans", "LLMs", "search engines"]
+  canonical_url: https://rirojass.github.io/
+  endpoints:
+    yaml: /profile.yml
+    json: /profile.json
+    llms: /llms.txt

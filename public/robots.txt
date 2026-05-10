@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Machine-readable identity surfaces:
+# /profile.yml  — canonical structured data (YAML)
+# /profile.json — same data as JSON
+# /llms.txt     — index for LLM agents

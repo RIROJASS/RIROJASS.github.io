@@ -1,10 +1,9 @@
 import { readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import yaml from "js-yaml";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const profilePath = resolve(here, "../data/profile.yml");
+// Resolve from project root so the path stays valid after Vite bundles this file.
+const profilePath = resolve(process.cwd(), "src/data/profile.yml");
 
 export const profileYamlRaw = readFileSync(profilePath, "utf-8");
 
